@@ -47,7 +47,11 @@ for (let i = 0; i < files.length; i++) {
   const pbeExportDest = pbeContext.getPbeExportDest(file)
   const pbeResolver = pbeContext.getPbeResolverFor(file)
 
+  console.log("Transpiling ... " + file)
+
   const transpiled = transpile.transpile(file, pbeExportDest, pbeResolver, sourceMap, outFilename)
+  if (transpiled.skipped) continue
+
   fs.writeFileSync(outFilename, transpiled.code)
 
   if (sourceMap) {

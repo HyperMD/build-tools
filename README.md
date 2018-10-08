@@ -23,7 +23,8 @@ This file describes all related module's name in plain browser env. Here is an e
 {
   "version": 1,
   "path": {
-    "./my_module": "MyModule"
+    "./my_module": "MyModule",
+    "./**/*.css": false
   },
   "external": {
     "lodash": "_",
@@ -46,7 +47,11 @@ This file describes all related module's name in plain browser env. Here is an e
 }
 ```
 
-Note that all file paths are relative to project dir. `.js` suffix is omitted.
+Note:
+
+- in `path`, all file paths are relative to project dir.
+- `.js` suffix is omitted.
+- glob pattern is supported in `path` and `external` fields
 
 Once `hmd-transpile` transpiled your `my_module.js`, you can use it in any environment, including module loader and **Plain Browser Environment**!
 
@@ -55,6 +60,12 @@ In Plain Browser Environment:
 - Write `<script src="./dist/my_module.js">` and a global variable `MyModule` will present.
 - The debounce function, which is imported via `import debounce from "lodash/debounce"`, is now `_.debounce` (where `_` is a global variable)
 
+## Annotation
+
+You can add an annotation in your `.js` file to change `hmd-transpile`'s behavior:
+
+- `/** @hypermd as FooBar.XXYY */` -- in plain browser env, export as global variable `FooBar.XXYY`
+- `/** @hypermd not module */` -- do not transpile this file to UMD module. But Buble will still work.
 
 ------------------
 
