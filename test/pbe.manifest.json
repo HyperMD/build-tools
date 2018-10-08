@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "path": {
+    "./file": "SOME_EXPORTED_STUFF"
+  },
+  "external": {
+    "foobar": "FooBar",
+    "fs": "__NodeJS.fs"
+  },
+  "import": {
+    "foobar": "./foobar/pbe.manifest.json"
+  }
+}

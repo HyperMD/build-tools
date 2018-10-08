@@ -1,0 +1,30 @@
+{
+  "name": "@hypermd/build-tools",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "email": "laobubu@gmail.com",
+    "name": "laobubu"
+  },
+  "bin": {
+    "hmd-transpile": "./bin/hmd-transpile"
+  },
+  "dependencies": {
+    "acorn": "^6.0.2",
+    "buble": "^0.19.4",
+    "glob": "^7.1.3",
+    "magic-string": "^0.25.1",
+    "merge-source-map": "^1.1.0",
+    "minimatch": "^3.0.4",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "ts-node": "^7.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^3.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.1"
+  }
+}
