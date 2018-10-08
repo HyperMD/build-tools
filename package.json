@@ -8,7 +8,7 @@
     "name": "laobubu"
   },
   "bin": {
-    "hmd-transpile": "./bin/hmd-transpile"
+    "hmd-transpile": "bin/hmd-transpile.js"
   },
   "dependencies": {
     "acorn": "^6.0.2",
