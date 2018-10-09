@@ -1,6 +1,8 @@
 # HyperMD Build Tools
 
 - `hmd-transpile` -- Transpile ES6 Modules into ES5 UMD modules, with [Buble][] and [Arcon][]!
+- `hmd-hs` -- Simple Http Server
+- `hmd-run` -- Simplified [concurrently](https://www.npmjs.com/package/concurrently)
 
 ## Why This?
 
