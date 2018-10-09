@@ -13,6 +13,7 @@ function printHelp() {
   -s          do not open browser window
   -d DIR      set root directory (default: cwd())
   -p PORT     set http port (default: 8000)
+  -o URI      the url to open (default: "/" )
   `)
   process.exit(1)
 }
@@ -29,4 +30,8 @@ const app = express()
 app.use(express.static(rootDir))
 app.listen(port, () => console.log(`${httpUrl} is now ready`))
 
-if (needOpn) opn(httpUrl)
+if (needOpn) {
+  const uri = argv.o || "/"
+  if (uri[0] !== '/') uri = '/' + uri
+  opn(httpUrl + uri)
+}
