@@ -31,7 +31,7 @@ app.use(express.static(rootDir))
 app.listen(port, () => console.log(`${httpUrl} is now ready`))
 
 if (needOpn) {
-  const uri = argv.o || "/"
+  let uri = argv.o || "/"
   if (uri[0] !== '/') uri = '/' + uri
   opn(httpUrl + uri)
 }

@@ -59,6 +59,8 @@ for (const it of argv._) {
 
 // then do whatever it requires
 
+process.env.FORCE_COLOR = 1
+
 for (const proc of procs) {
   proc.start()
   proc.on('exit', code => {
